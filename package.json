@@ -1,0 +1,53 @@
+{
+  "name": "ai-agents-lab-for-amazon-connect",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest --run",
+    "demo": "npx playwright test --config demo/playwright.config.ts",
+    "deploy": "./scripts/deploy.sh all",
+    "deploy:infra": "./scripts/deploy.sh infra",
+    "deploy:web": "./scripts/deploy.sh web",
+    "deploy:outputs": "./scripts/deploy.sh outputs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1057.0",
+    "@aws-sdk/client-connect": "^3.1048.0",
+    "@aws-sdk/client-connectparticipant": "^3.1053.0",
+    "@aws-sdk/client-iam": "^3.1055.0",
+    "@aws-sdk/client-lex-models-v2": "^3.1053.0",
+    "@aws-sdk/client-polly": "^3.1053.0",
+    "@aws-sdk/client-qconnect": "^3.1048.0",
+    "@aws-sdk/client-s3": "^3.1060.0",
+    "@aws-sdk/client-sso": "^3.1045.0",
+    "@aws-sdk/client-sso-oidc": "^3.1045.0",
+    "@aws-sdk/client-sts": "^3.1055.0",
+    "@cloudscape-design/code-view": "^3.0.133",
+    "@cloudscape-design/components": "^3.0.1293",
+    "@cloudscape-design/design-tokens": "^3.0.86",
+    "@cloudscape-design/global-styles": "^1.0.58",
+    "amazon-chime-sdk-js": "^3.29.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.15.0",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/credential-providers": "^3.1066.0",
+    "@playwright/test": "1.60.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "fast-check": "^4.8.0",
+    "jsdom": "^29.1.1",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5",
+    "vitest": "^4.1.6"
+  }
+}

@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite
+vite.config.ts.timestamp-*
+
+# Testing
+coverage/
+
+# CDK
+cdk.out/
+infra/cdk-outputs.json
+
+# Internal docs (not for public repo)
+PRODUCT.md
+spec-planning.md
+spec-planning-test-harness.md
+evaluation-planning.md
+design/
+demo/
+test-results/
+
+# Logs
+*.log
+npm-debug.log*
+
+tmp/
+
+# Threat model (local analysis artifacts)
+.threatmodel/
+
+# Kiro artefacts
+.kiro/
