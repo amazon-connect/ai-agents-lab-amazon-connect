@@ -18,7 +18,7 @@ export const HELP_REGISTRY: HelpRegistry = {
       title: "Test Script (YAML)",
       body: [
         "A multi-turn conversation script defined in YAML. The top-level name field labels the script. The turns array contains one entry per conversation turn.",
-        "Each turn requires a customer field with the utterance text. An optional expectedResponses field (integer) tells the runner how many agent messages to wait for before sending the next customer turn.",
+        "Each turn requires a customer field with the utterance text. An optional variations array provides alternative phrasings for batch testing.",
       ],
       links: [
         { text: "YAML specification", href: "https://yaml.org/spec/1.2.2/" },
@@ -49,6 +49,16 @@ export const HELP_REGISTRY: HelpRegistry = {
         "Bucket size is chosen automatically based on the spread of your data: 0.5s buckets when the range is under 5s, 1s buckets up to 15s, 5s buckets up to 60s, and 10s buckets beyond that.",
         "Only iterations that completed successfully with a transcript are included. Failed or stopped iterations are excluded from the chart.",
         "The p50 and p95 values shown above the chart represent the median and 95th percentile execution times — useful for understanding typical vs. worst-case latency.",
+      ],
+    },
+    {
+      id: "settle-duration",
+      title: "Settle duration",
+      body: [
+        "Controls how long the runner waits after receiving an agent message before deciding the turn is complete and sending the next customer utterance.",
+        "Agents sometimes send multi-part responses — a short acknowledgement followed by the actual answer, for example. The settle timer gives those additional messages time to arrive before the runner moves on.",
+        "A lower value (1–2s) makes scripts run faster but risks cutting a turn short if the agent pauses between messages. A higher value (5–10s) is safer for agents with multi-part responses but increases total run time.",
+        "The default is 5 seconds. If your scripts finish early and miss the tail of an agent response, try increasing this value.",
       ],
     },
     {

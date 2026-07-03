@@ -41,7 +41,6 @@ name: "Booking flow — happy path"
 turns:
   - customer: "I'd like to book a flight"
   - customer: "London to Paris, next Friday"
-    expectedResponses: 2  # wait for 2 agent messages (default: 1)
     variations:           # optional: alternative phrasings (see Batch Variation Generation)
       - "I need a flight from London to Paris next Friday"
       - "Can you book London to Paris for next Friday?"

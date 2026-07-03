@@ -18,14 +18,6 @@ turns:
 
 Each turn sends one customer message. The agent's response is captured but not validated — validation happens in Evaluation.
 
-An optional `expectedResponses` field per turn tells the runner how many agent messages to wait for before sending the next customer utterance (useful if your agent sends multiple messages in sequence):
-
-```yaml
-turns:
-  - customer: "Hello"
-    expectedResponses: 2
-```
-
 See [Reference](./10-reference.md) for the full YAML specification.
 
 ## Loading a script
@@ -38,6 +30,14 @@ You can load a script two ways:
 - **From a previous session** — if you exported a script in the same browser session, it may already be populated in the textarea.
 
 The script content appears in the editable textarea. You can make changes directly before running.
+
+## Chat settings
+
+Before running a chat script, one setting is available above the script panel:
+
+**Settle duration** — how long the runner waits after receiving an agent message before deciding the turn is complete and sending the next customer utterance. Default is 5 seconds.
+
+Agents sometimes send multi-part responses — a brief acknowledgement followed by the actual answer, for example. The settle timer gives those additional messages time to arrive. If your scripts are finishing turns prematurely and missing the tail of an agent response, increase this value. If runs are taking longer than expected due to unnecessary waiting, decrease it. Range: 1–10 seconds, in 0.5s steps.
 
 ## Running the script
 
