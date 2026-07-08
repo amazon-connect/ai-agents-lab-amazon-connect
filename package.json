@@ -33,7 +33,7 @@
     "amazon-chime-sdk-js": "^3.29.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.15.0",
+    "react-router-dom": "^7.18.1",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
